@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Khaled Ras guerriche's page</title>
+
+</head>
+
+<body style="background-color: #a8d893;">
+		<h1>Khaled Ras guerriche's page</h1>
+	<!---introduction--->
+	<p> This web page is about leaarning Arabic.
+		I am going to teach you some Arabic and test you.
+		for example to say "Hello" in Arabic is "Marhaba"
+		and to say thank you is "Shoukran". 
+		to find more about the Arabic language check out this link
+		<a href="https://www.madinaharabic.com/arabic-language-course/lessons/" 
+		target="_blank">Find more about the Arabic language ^^</a>
+	<p>
+	<!---first Question--->
+	<form id=Quiz>
+		<p id="FirstQ"><b> Question 1:How do we say "Hello" in Arabic?</b><p>
+		<input type="radio" id="click1" name="rad1" onclick="func()">
+		<label for="click" > Shoukran:</label>
+
+		<input type="radio" id="click2" name="rad1" onclick="func()">
+		<label for="click"> Marhaba:</label>
+
+		<input type="radio" id="click3" name="rad1" onclick="func()">
+		<label for="click"> Ilalika:</label>
+		<p id="msg1"></p>
+
+		<!---Second Question--->
+
+		<p id="SecondQ"><b> Question 2: How do we say "Thank you" in Arabic?</b><p>
+		<input type="radio" id="click21" name="rad2" onclick="func()">
+		<label for="click" > Ilalika:</label>
+
+		<input type="radio" id="click22" name="rad2" onclick="func()">
+		<label for="click"> Marhaba:</label>
+
+		<input type="radio" id="click23" name="rad2" onclick="func()">
+		<label for="click"> Shoukran:</label>
+		<p id="msg2"></p>
+		<!---third Question--->
+		
+		<p id="thirdQ"><b> Question 3: which picture shows the Arabic language calligraphy?</b><p>
+			<img href= "javascript:message1" id="click31" src="img1.jpg" width="150" height="150" name="rad3" onclick="imgFunc(1)">	
+			<img href= "javascript:message2" id="click32" src="img2.jpg" width="150" height="150" name="rad3" onclick="imgFunc(2)">
+			<img href= "javascript:message3" id="click33" src="img3.jpg" width="150" height="150" name="rad3" onclick="imgFunc(3)">
+		<p id="msg3"></p>	
+			
+		
+		<!-- -reset- -->
+		<br>
+		<input type ="reset" name ="reset" value="Reset" onclick="funcReset">
+
+	<form>
+</body>
+
+<!---the quiz questions--->
+<script type="text/javascript">
+
+	function func()
+	{
+	document.getElementById("Quiz").onreset=function() {resetFunc()};
+
+	if (click2.checked){
+		document.getElementById("msg1").innerHTML= "correct!";
+		}
+	else if(click1.checked || click3.checked){
+		document.getElementById("msg1").innerHTML= "Not correct, Try again!";
+		}
+	if (click23.checked){
+		document.getElementById("msg2").innerHTML= "correct!";
+		}
+	else if(click21.checked || click22.checked){
+		document.getElementById("msg2").innerHTML= "Not correct, Try again!";
+		}
+
+	
+	}
+	<!-- function for images -->
+	
+	function imgFunc(value)
+	{
+		if (value==1)
+		{
+		document.getElementById('msg3').innerHTML = "correct";
+		}else if (value==2)
+		{
+		document.getElementById('msg3').innerHTML = "Not correct, Try again!";
+		}else
+		{
+		document.getElementById('msg3').innerHTML = "Not correct, Try again!";
+		}
+
+	}
+	
+	<!---reset function--->
+	function resetFunc()
+	{	
+		document.getElementById("msg1").innerHTML="";
+		document.getElementById("msg2").innerHTML="";
+		document.getElementById("msg3").innerHTML="";
+	}
+
+</script>
+</html>
